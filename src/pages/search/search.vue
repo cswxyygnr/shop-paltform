@@ -104,7 +104,7 @@ export default {
         //品牌
         trademark: ''
       },
-      alert:false
+      alert: false
     }
   },
 
@@ -183,10 +183,7 @@ export default {
       // console.log(result)
       if (result === 1) {
         alert('加入成功')
-      }else{
-        alert('加入失败')
       }
-
     }
   },
 
@@ -200,8 +197,8 @@ export default {
       this.searchParams.category2Id = undefined
       this.searchParams.category3Id = undefined
     }
-  }//监听路由信息的变化以便再次发请求，拉取数据
-}
+  }
+}//监听路由信息的变化以便再次发请求，拉取数据
 </script>
 
 <style lang="less" scoped>
