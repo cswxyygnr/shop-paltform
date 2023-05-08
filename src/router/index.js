@@ -87,7 +87,9 @@ router.beforeEach((to, from, next) => {
         //用户已登录就不能再去login了
         if (to.path === '/login') {
             next('/')
-        } else{next()}
+        } else{
+            next()
+        }
         // else {
         //     if (name) next()
         //     //登录但去的不是login
