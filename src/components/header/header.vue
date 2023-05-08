@@ -31,7 +31,7 @@
         <!--头部第二行 搜索区域-->
         <div class="bottom">
             <h1 class="logoArea">
-                <router-link class="logo" title="尚品汇" href="###" target="_blank" to="/home">
+                <router-link class="logo" title="尚品汇" target="_blank" to="/home">
                     <img src="./images/logo.png" alt="">
                 </router-link>
             </h1>
