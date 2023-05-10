@@ -86,7 +86,7 @@ export default {
     //获取验证码按钮的回调
     getCode(){
       this.$store.dispatch('getCode',this.phone)
-      this.code = this.$store.state.user.code
+      // this.code = this.$store.state.user.code
     },
     //注册按钮的回调
     async register(){
