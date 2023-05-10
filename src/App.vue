@@ -26,12 +26,14 @@ export default {
     this.$store.dispatch('getList')
     //获取用户信息，避免刷新后退出登陆的情况
     this.$store.dispatch('user')
-  },
 
-  beforeDestroy(){
-    console.log('app被销毁了')
-    this.$store.dispatch('userLogout')
-  }
+   
+    // 关闭浏览器窗口的时候清空浏览器缓存在localStorage的数据
+    window.addEventListener('beforeunload',()=>{
+            localStorage.removeItem('token');
+        });
+
+  },
 }
 </script>
 

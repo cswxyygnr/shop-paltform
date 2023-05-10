@@ -13,7 +13,7 @@ const mutations = {
 
     //登录，返回token
     USERLOGIN(state,data){
-        state.token = localStorage.getItem('TOKEN')
+        state.token = data.token
     },
     //获取用户信息
     USER(state,data){
@@ -55,10 +55,11 @@ const actions = {
     let result = await reqLogin(data)
     console.log(result)
     if(result.code==200){
+        console.log('进入存储token的函数')
         //在仓库中存储token，但不持久，一刷新页面就没了，在这里可以用浏览器本地存储,但在刷新时没有用该token,需要在state中获取本地存储
         commit('USERLOGIN',result.data)
-        // localStorage.setItem('TOKEN',result.data.token)
-        setToken(result.data.token);
+        localStorage.setItem('TOKEN',result.data.token)
+        // setToken(result.data.token);
 
         return '已登陆'
     }else{

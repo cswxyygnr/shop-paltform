@@ -47,7 +47,7 @@ let router = new vueRouter({
             meta: { show: false }
         },
         {
-            path: '/search',
+            path: '/search/:keyWord',
             component: Search,
             meta: { show: true },
             name: 'search'

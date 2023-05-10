@@ -9,6 +9,7 @@ import { method } from 'lodash'
 export const getCategoryList = () => {
 
     //发送请求,返回promise对象
+    console.log(request,'request是什么')
     return request({ url: '/product/getBaseCategoryList', methods: 'get' })
 }
 
