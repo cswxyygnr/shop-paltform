@@ -102,6 +102,10 @@ router.beforeEach((to, from, next) => {
         // }
     } else {
         //未登录
-        next()
+        if(to.path === '/shopCart'){
+            next('/')
+        }else{
+            next()
+        }
     }
 })

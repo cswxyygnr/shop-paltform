@@ -94,7 +94,7 @@ export default {
                 location.name = 'search'
                 this.$router.push(location)
             }else{
-                // console.log('路由未跳转，仅仅修改query参数')
+                console.log('路由未跳转，仅仅修改query参数')
                 this.$router.push(location)
             }
         },

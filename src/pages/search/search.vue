@@ -137,17 +137,19 @@ export default {
     },
     //删除面包屑1
     removeBrand() {
+      let location = { params: this.$route.params}
       this.searchParams.categoryName = ''
 
       this.searchParams.category1Id = ''
       this.searchParams.category2Id = ''
       this.searchParams.category3Id = ''
-      this.$router.push({ name: 'search', params: this.$route.params, query: {} })
+      this.$router.push(location)
       this.getData()
     },
     removeKey() {
+      let location = { query: this.$route.query}
       this.searchParams.keyWord = ''
-      this.$router.push({ name: 'search', query: this.$route.query, params: {} })
+      this.$router.push(location)
       this.getData()
     },
     removeb() {
@@ -183,6 +185,8 @@ export default {
       // console.log(result)
       if (result === 1) {
         alert('加入成功')
+      }else{
+        alert('加入失败,请返回登陆')
       }
     }
   },

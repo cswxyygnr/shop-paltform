@@ -1,9 +1,10 @@
 import { reqGoodsInfo ,reqAddOrUpdateShopCart} from "@/api"
-import {getUUID} from '../../utils/uuid_token'
+// import {getUUID} from '../../utils/uuid_token'
+import user from '../user/user.js'
 
 const state = {
     goodInfo:{},
-    uuid_token:getUUID()
+    // uuid_token:getUUID()
 }
 
 const actions = {
@@ -17,11 +18,15 @@ const actions = {
 
     async addOrUpdateCart({commit},{skuId,skuNum}){
         // console.log(data)
-        let result = await reqAddOrUpdateShopCart(skuId,skuNum)
-        //不再需要仓库存储数据了，服务器存储
-        console.log('存储商品信息成功与否',result)
-        if(result.code == 200){
-            return Promise.resolve(1)
+        if(user.token){
+            let result = await reqAddOrUpdateShopCart(skuId,skuNum)
+            //不再需要仓库存储数据了，服务器存储
+            console.log('存储商品信息成功与否',result)
+            if(result.code == 200){
+                return Promise.resolve(1)
+            }else{
+                return new Error('加入失败')
+            }
         }else{
             return new Error('加入失败')
         }
