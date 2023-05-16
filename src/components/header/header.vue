@@ -86,10 +86,13 @@ export default {
                 location.query = this.$route.query
             }
             if(this.$route.name !== 'search'){
+                // console.log(this.$route.name)
                 location.name = 'search'
                 this.$router.push(location)
             }else{
-                this.$router.push({params:this.keyWord,query:this.$route.query})
+                // console.log(this.$route.name)
+                // this.$router.push({params:this.keyWord,query:this.$route.query})
+                this.$router.push(location)
             }
     },
     
